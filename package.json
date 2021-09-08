@@ -5,7 +5,6 @@
     "node": ">=12.9.0"
   },
   "scripts": {
-    "prepush": "node ./bin/prepush",
     "preinstall": "([ \"$CI\" != true ] && npx npm-force-resolutions) || true"
   },
   "devDependencies": {
