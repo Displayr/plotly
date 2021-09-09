@@ -4,7 +4,9 @@
   "engines": {
     "node": ">=12.9.0"
   },
-  "scripts": {},
+  "scripts": {
+    "preinstall": "([ \"$CI\" != true ] && npx npm-force-resolutions) || true"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "husky": "^0.13.3",
