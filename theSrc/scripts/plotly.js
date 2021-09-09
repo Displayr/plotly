@@ -1,3 +1,3 @@
-import widgetObject from './plotly.factory'
+import widgetDefinition from './widgetdefinition'
 
-HTMLWidgets.widget(widgetObject)
+HTMLWidgets.widget(widgetDefinition)

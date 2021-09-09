@@ -1,4 +1,4 @@
-const widgetObject = {
+const widgetDefinition = {
   name: "plotly",
   type: "output",
 
@@ -12,7 +12,7 @@ const widgetObject = {
       var height = instance.height || height;
       Plotly.relayout(el, {width: width, height: height});
     }
-  },  
+  },
   
   renderValue: function(el, x, instance) {
     
@@ -932,4 +932,4 @@ function debounce(func, wait, immediate) {
 	};
 };
 
-module.exports = widgetObject
+module.exports = widgetDefinition

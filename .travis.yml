@@ -5,3 +5,5 @@ sudo: required
 dist: xenial
 before_install:
   - sudo apt-get update
+script:
+  - jest
