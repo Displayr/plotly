@@ -551,6 +551,10 @@ const widgetDefinition = {
         });
       }
     } // end of selectionChange
+
+    graphDiv.on("plotly_afterplot", function() {
+      console.log("-------------plotly done!-----------------------------------------------------");
+    });
   } // end of renderValue
 }
 
