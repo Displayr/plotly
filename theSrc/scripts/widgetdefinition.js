@@ -179,7 +179,12 @@ const widgetDefinition = {
     }
     
     // Trigger plotly.js calls defined via `plotlyProxy()`
-    plot.then(function() {
+    plot.catch(function() {
+      // Used by Displayr to determine when widget is ready to be snapshot for testing
+      graphDiv.setAttribute("rhtmlwidget-status", "ready");
+    }).then(function() {
+      // Used by Displayr to determine when widget is ready to be snapshot for testing
+      graphDiv.setAttribute("rhtmlwidget-status", "ready");
       if (HTMLWidgets.shinyMode) {
         Shiny.addCustomMessageHandler("plotly-calls", function(msg) {
           var gd = document.getElementById(msg.id);
@@ -555,10 +560,10 @@ const widgetDefinition = {
       }
     } // end of selectionChange
 
-    graphDiv.on("plotly_afterplot", function() {
-      // Used by Displayr to determine when widget is ready to be snapshot for testing
-      graphDiv.setAttribute("rhtmlwidget-status", "ready");
-    });
+    // graphDiv.on("plotly_afterplot", function() {
+    //   // Used by Displayr to determine when widget is ready to be snapshot for testing
+    //   graphDiv.setAttribute("rhtmlwidget-status", "ready");
+    // });
   } // end of renderValue
 }
 
