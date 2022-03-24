@@ -560,10 +560,10 @@ const widgetDefinition = {
       }
     } // end of selectionChange
 
-    // graphDiv.on("plotly_afterplot", function() {
-    //   // Used by Displayr to determine when widget is ready to be snapshot for testing
-    //   graphDiv.setAttribute("rhtmlwidget-status", "ready");
-    // });
+    graphDiv.on("plotly_afterplot", function() {
+      // Used by Displayr to determine when widget is ready to be snapshot for testing
+      graphDiv.setAttribute("rhtmlwidget-status", "ready");
+    });
   } // end of renderValue
 }
 
