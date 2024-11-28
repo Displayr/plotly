@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - checkout
+      # - checkout
       # Replace this with a real test runner invocation
       - run:
           name: Run tests
