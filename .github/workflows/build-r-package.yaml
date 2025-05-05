@@ -1,0 +1,18 @@
+name: Build plotly
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    name: Build plotly
+    permissions:
+      checks: write
+      contents: read
+    uses: Displayr/nixr-public/.github/workflows/build-flake-installable.yaml@master
+    with:
+      installable-path: pkgs.x86_64-linux.rPackages.plotly
+      build-args: --override-input displayr-plotly .
+      installable-name: plotly
+    secrets: inherit
