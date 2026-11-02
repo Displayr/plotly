@@ -1,5 +1,6 @@
 r_version <- paste(R.version$major, R.version$minor, sep = ".")
-r_release <- rversions::r_release()$version
+# Looking up the release needs the network; offline, cloud tests skip instead of every test aborting.
+r_release <- tryCatch(rversions::r_release()$version, error = function(e) NA_character_)
 is_release <- isTRUE(r_release == r_version)
 is_win <- .Platform$OS.type == "windows"
 
